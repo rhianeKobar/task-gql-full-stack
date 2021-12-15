@@ -1,0 +1,18 @@
+type Query {
+  heroes: [Character]
+  types: [String]
+}
+
+interface Character {
+  name: String!
+}
+
+type Human implements Character {
+  name: String!
+  hasLightsaber: Boolean!
+}
+
+type Droid implements Character {
+  name: String!
+  primaryFunction: String!
+}
