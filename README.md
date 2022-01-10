@@ -16,11 +16,11 @@ Those are the Characters that should be returned by the server:
 [
     {
         "name": "Luke Skywalker",
-        "hasLightsaber": true
+        "hasLightsaver": true
     },
     {
         "name": "Han Solo",
-        "hasLightsaber": false
+        "hasLightsaver": false
     },
     {
         "name": "C-3PO",
@@ -66,3 +66,26 @@ the test turns green again.
  - A `EnumTypeDefinition` has a `EnumValuesDefinitionList` See: https://github.com/jensneuse/graphql-go-tools/blob/master/pkg/ast/ast_enum_type_definition.go#L25
 
 ## Frontend
+
+The FrontEnd is written in Javascript and uses following technologies:
+ - [React](https://reactjs.org/)
+ - [Jest](https://jestjs.io/)
+
+### Task 1 (Make all the tests green).
+
+Currently one of the test is failing one FE, make the changes in the appropriate files to make all the test green.
+
+> Tests can be run using `npm test` command 
+
+
+### Task 2 (Add UI)
+
+- Use the currently available BE to render a [Graphiql](https://www.npmjs.com/package/graphiql) playground that helps query the graphql API.
+
+- Modify GraphiQL to add a button that toggles the view of newly added UI.
+
+- Add UI to render the JSON response received from BE.
+
+Wireframe :
+
+<img src="./example/example.png">
