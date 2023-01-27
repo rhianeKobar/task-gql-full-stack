@@ -56,7 +56,7 @@ Fix the implementation and make the tests related to this issue pass.
 
 *Hint:* Look inside the `schemaparser` package.
 
-### Task 3
+### Task 3 (Bonus)
 **For the third task you need to extend the GraphQL schema with 2 enums and their values. See the GraphQL documentation on how to add 
 enums to a GraphQL schema: https://graphql.org/learn/schema/#enumeration-types**
 
@@ -107,9 +107,10 @@ Currently one of the test is failing one FE, make the changes in the appropriate
 
 - Use the currently available BE to render a [Graphiql](https://www.npmjs.com/package/graphiql) playground that helps query the graphql API.
 
-- Modify GraphiQL to add a button that toggles the view of newly added UI.
 
 - Add UI to render the JSON response received from BE.
+- The component should change the the background color on click.
+- Cover the functionality with unit tests.
 
 Wireframe :
 
