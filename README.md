@@ -22,7 +22,7 @@ You can also start the server manually and send queries to the graphql endpoint:
 
 ```
 go run server.go
-curl --location --request POST 'localhost:8085/query' --header 'Content-Type: application/json' --data-raw '{"query":"{ heroes { name } }","variables":{}}
+curl --location --request POST 'localhost:8085/query' --header 'Content-Type: application/json' --data-raw '{"query":"{ heroes { name } }","variables":{}}'
 curl --location --request POST 'localhost:8085/query' --header 'Content-Type: application/json' --data-raw '{"query":"{ types }","variables":{}}'
 ```
 
