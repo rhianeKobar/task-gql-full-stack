@@ -13,7 +13,21 @@ import (
 )
 
 func (r *queryResolver) Heroes(ctx context.Context) ([]model.Character, error) {
-	return r.heroes, nil
+	heroes := []model.Character{
+		model.Human{
+        Name: "Luke Skywalker",
+        HasLightsaber: true,
+    },
+    model.Human{
+        Name: "Han Solo",
+        HasLightsaber: false,
+    },
+    model.Droid{
+        Name: "C-3PO",
+        PrimaryFunction: "Translator",
+    },
+	} 
+	return heroes, nil
 }
 
 func (r *queryResolver) Types(ctx context.Context) ([]*string, error) {

@@ -34,11 +34,11 @@ Those are the Characters that should be returned by the server:
 [
     {
         "name": "Luke Skywalker",
-        "hasLightsaver": true
+        "hasLightsaber": true
     },
     {
         "name": "Han Solo",
-        "hasLightsaver": false
+        "hasLightsaber": false
     },
     {
         "name": "C-3PO",
