@@ -5,7 +5,6 @@ package graph
 
 import (
 	"context"
-	"fmt"
 	"io/ioutil"
 
 	"github.com/pvormste/task-gql-full-stack/graph/generated"
@@ -14,7 +13,7 @@ import (
 )
 
 func (r *queryResolver) Heroes(ctx context.Context) ([]model.Character, error) {
-	panic(fmt.Errorf("not implemented"))
+	return r.heroes, nil
 }
 
 func (r *queryResolver) Types(ctx context.Context) ([]*string, error) {

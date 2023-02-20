@@ -4,4 +4,9 @@ package graph
 //
 // It serves as dependency injection for your app, add any dependencies you require here.
 
-type Resolver struct{}
+import	("github.com/pvormste/task-gql-full-stack/graph/model")
+
+
+type Resolver struct{
+	heroes []model.Character
+}
