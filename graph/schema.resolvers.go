@@ -17,14 +17,20 @@ func (r *queryResolver) Heroes(ctx context.Context) ([]model.Character, error) {
 		model.Human{
         Name: "Luke Skywalker",
         HasLightsaber: true,
+				Class: "luke",
+				Colour: "#A1B7B0",
     },
     model.Human{
         Name: "Han Solo",
         HasLightsaber: false,
+				Class: "han",
+				Colour: "#0B3957",
     },
     model.Droid{
         Name: "C-3PO",
         PrimaryFunction: "Translator",
+				Class: "c-3po",
+				Colour: "#D6BE98",
     },
 	} 
 	return heroes, nil

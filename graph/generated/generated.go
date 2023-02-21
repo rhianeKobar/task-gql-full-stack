@@ -2,6 +2,8 @@
 
 package generated
 
+//go:generate go run github.com/99designs/gqlgen generate
+
 import (
 	"bytes"
 	"context"
@@ -45,11 +47,15 @@ type ComplexityRoot struct {
 	Droid struct {
 		Name            func(childComplexity int) int
 		PrimaryFunction func(childComplexity int) int
+		Class 					func(childComplexity int) int
+		Colour  				func(childComplexity int) int
 	}
 
 	Human struct {
 		HasLightsaber func(childComplexity int) int
 		Name          func(childComplexity int) int
+		Class 				func(childComplexity int) int
+		Colour 				func(childComplexity int) int
 	}
 
 	Query struct {
@@ -92,6 +98,20 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.Droid.PrimaryFunction(childComplexity), true
 
+	case "Droid.class":
+		if e.complexity.Droid.Class == nil {
+			break
+		}
+
+		return e.complexity.Droid.Class(childComplexity), true
+
+	case "Droid.colour":
+		if e.complexity.Droid.Colour == nil {
+			break
+		}
+
+		return e.complexity.Droid.Colour(childComplexity), true
+
 	case "Human.hasLightsaber":
 		if e.complexity.Human.HasLightsaber == nil {
 			break
@@ -105,7 +125,21 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.Human.Name(childComplexity), true
+	
+	case "Human.class":
+		if e.complexity.Human.Class == nil {
+			break
+		}
 
+		return e.complexity.Human.Class(childComplexity), true
+
+	case "Human.colour":
+		if e.complexity.Human.Colour == nil {
+			break
+		}
+
+		return e.complexity.Human.Colour(childComplexity), true
+	
 	case "Query.heroes":
 		if e.complexity.Query.Heroes == nil {
 			break
@@ -177,16 +211,22 @@ var sources = []*ast.Source{
 
 interface Character {
   name: String!
+	class: String!
+	colour: String!
 }
 
 type Human implements Character {
   name: String!
   hasLightsaber: Boolean!
+	class: String!
+	colour: String!
 }
 
 type Droid implements Character {
   name: String!
   primaryFunction: String!
+	class: String!
+	colour: String!
 }`, BuiltIn: false},
 }
 var parsedSchema = gqlparser.MustLoadSchema(sources...)
@@ -283,6 +323,76 @@ func (ec *executionContext) _Droid_name(ctx context.Context, field graphql.Colle
 	return ec.marshalNString2string(ctx, field.Selections, res)
 }
 
+func (ec *executionContext) _Droid_class(ctx context.Context, field graphql.CollectedField, obj *model.Droid) (ret graphql.Marshaler) {
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	fc := &graphql.FieldContext{
+		Object:     "Droid",
+		Field:      field,
+		Args:       nil,
+		IsMethod:   false,
+		IsResolver: false,
+	}
+
+	ctx = graphql.WithFieldContext(ctx, fc)
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Class, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) _Droid_colour(ctx context.Context, field graphql.CollectedField, obj *model.Droid) (ret graphql.Marshaler) {
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	fc := &graphql.FieldContext{
+		Object:     "Droid",
+		Field:      field,
+		Args:       nil,
+		IsMethod:   false,
+		IsResolver: false,
+	}
+
+	ctx = graphql.WithFieldContext(ctx, fc)
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Colour, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
 func (ec *executionContext) _Droid_primaryFunction(ctx context.Context, field graphql.CollectedField, obj *model.Droid) (ret graphql.Marshaler) {
 	defer func() {
 		if r := recover(); r != nil {
@@ -337,6 +447,76 @@ func (ec *executionContext) _Human_name(ctx context.Context, field graphql.Colle
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
 		ctx = rctx // use context from middleware stack in children
 		return obj.Name, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) _Human_class(ctx context.Context, field graphql.CollectedField, obj *model.Human) (ret graphql.Marshaler) {
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	fc := &graphql.FieldContext{
+		Object:     "Human",
+		Field:      field,
+		Args:       nil,
+		IsMethod:   false,
+		IsResolver: false,
+	}
+
+	ctx = graphql.WithFieldContext(ctx, fc)
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Class, nil
+	})
+	if err != nil {
+		ec.Error(ctx, err)
+		return graphql.Null
+	}
+	if resTmp == nil {
+		if !graphql.HasFieldError(ctx, fc) {
+			ec.Errorf(ctx, "must not be null")
+		}
+		return graphql.Null
+	}
+	res := resTmp.(string)
+	fc.Result = res
+	return ec.marshalNString2string(ctx, field.Selections, res)
+}
+
+func (ec *executionContext) _Human_colour(ctx context.Context, field graphql.CollectedField, obj *model.Human) (ret graphql.Marshaler) {
+	defer func() {
+		if r := recover(); r != nil {
+			ec.Error(ctx, ec.Recover(ctx, r))
+			ret = graphql.Null
+		}
+	}()
+	fc := &graphql.FieldContext{
+		Object:     "Human",
+		Field:      field,
+		Args:       nil,
+		IsMethod:   false,
+		IsResolver: false,
+	}
+
+	ctx = graphql.WithFieldContext(ctx, fc)
+	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
+		ctx = rctx // use context from middleware stack in children
+		return obj.Colour, nil
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -1691,6 +1871,16 @@ func (ec *executionContext) _Droid(ctx context.Context, sel ast.SelectionSet, ob
 			out.Values[i] = ec._Droid_name(ctx, field, obj)
 			if out.Values[i] == graphql.Null {
 				invalids++
+			} 
+		case "class":
+			out.Values[i] = ec._Droid_class(ctx, field, obj)
+			if out.Values[i] == graphql.Null {
+				invalids++
+			}
+		case "colour":
+			out.Values[i] = ec._Droid_colour(ctx, field, obj)
+			if out.Values[i] == graphql.Null {
+				invalids++
 			}
 		case "primaryFunction":
 			out.Values[i] = ec._Droid_primaryFunction(ctx, field, obj)
@@ -1721,6 +1911,16 @@ func (ec *executionContext) _Human(ctx context.Context, sel ast.SelectionSet, ob
 			out.Values[i] = graphql.MarshalString("Human")
 		case "name":
 			out.Values[i] = ec._Human_name(ctx, field, obj)
+			if out.Values[i] == graphql.Null {
+				invalids++
+			}
+		case "class":
+			out.Values[i] = ec._Human_class(ctx, field, obj)
+			if out.Values[i] == graphql.Null {
+				invalids++
+			}
+		case "colour":
+			out.Values[i] = ec._Human_colour(ctx, field, obj)
 			if out.Values[i] == graphql.Null {
 				invalids++
 			}

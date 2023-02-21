@@ -1,39 +1,22 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .container {
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   padding: 5em;
 }
-
 .container .btns {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
   padding-top: 2em;
   padding-bottom: 2em;
 }
@@ -44,84 +27,49 @@
   border: 0;
   height: 150px;
   width: 150px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background-position: center;
   background-size: cover;
 }
 
 .luke {
   background-image: url("https://coffeewithkenobi.com/wp-content/uploads/2015/02/Luke-EP4.jpg");
-  -webkit-box-shadow: 5px 5px #a1b7b0;
-          box-shadow: 5px 5px #a1b7b0;
-  -webkit-transition: -webkit-box-shadow 200ms, -webkit-transform 500ms;
-  transition: -webkit-box-shadow 200ms, -webkit-transform 500ms;
+  box-shadow: 5px 5px #a1b7b0;
   transition: box-shadow 200ms, transform 500ms;
-  transition: box-shadow 200ms, transform 500ms, -webkit-box-shadow 200ms, -webkit-transform 500ms;
 }
-
 .luke:hover {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-transform: translate(5px, 5px);
-          transform: translate(5px, 5px);
+  box-shadow: none;
+  transform: translate(5px, 5px);
 }
 
-.hans {
+.han {
   background-image: url("http://static2.businessinsider.com/image/535faca669bedd717b74114c-1190-625/han-solo-reportedly-has-gigantic-role-in-star-wars-episode-vii.jpg");
-  -webkit-box-shadow: 5px 5px #0B3957;
-          box-shadow: 5px 5px #0B3957;
-  -webkit-transition: -webkit-box-shadow 200ms, -webkit-transform 500ms;
-  transition: -webkit-box-shadow 200ms, -webkit-transform 500ms;
+  box-shadow: 5px 5px #0B3957;
   transition: box-shadow 200ms, transform 500ms;
-  transition: box-shadow 200ms, transform 500ms, -webkit-box-shadow 200ms, -webkit-transform 500ms;
 }
-
-.hans:hover {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-transform: translate(5px, 5px);
-          transform: translate(5px, 5px);
+.han:hover {
+  box-shadow: none;
+  transform: translate(5px, 5px);
 }
 
 .c-3po {
   background-image: url("https://data1.ibtimes.co.in/en/full/724624/star-wars-c3po.jpg");
-  -webkit-box-shadow: 5px 5px #D6BE98;
-          box-shadow: 5px 5px #D6BE98;
-  -webkit-transition: -webkit-box-shadow 200ms, -webkit-transform 500ms;
-  transition: -webkit-box-shadow 200ms, -webkit-transform 500ms;
+  box-shadow: 5px 5px #D6BE98;
   transition: box-shadow 200ms, transform 500ms;
-  transition: box-shadow 200ms, transform 500ms, -webkit-box-shadow 200ms, -webkit-transform 500ms;
 }
-
 .c-3po:hover {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-transform: translate(5px, 5px);
-          transform: translate(5px, 5px);
+  box-shadow: none;
+  transform: translate(5px, 5px);
 }
 
 .chewy {
   background-image: url("https://i.kinja-img.com/gawker-media/image/upload/s--gUpk5eyJ--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/sft92ot11zegmj1eeckp.jpg");
-  -webkit-box-shadow: 5px 5px #B2B2B7;
-          box-shadow: 5px 5px #B2B2B7;
-  -webkit-transition: -webkit-box-shadow 200ms, -webkit-transform 500ms;
-  transition: -webkit-box-shadow 200ms, -webkit-transform 500ms;
+  box-shadow: 5px 5px #B2B2B7;
   transition: box-shadow 200ms, transform 500ms;
-  transition: box-shadow 200ms, transform 500ms, -webkit-box-shadow 200ms, -webkit-transform 500ms;
 }
-
 .chewy:hover {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-transform: translate(5px, 5px);
-          transform: translate(5px, 5px);
-}
-/*# sourceMappingURL=Button.css.map */
+  box-shadow: none;
+  transform: translate(5px, 5px);
+}/*# sourceMappingURL=Button.css.map */

@@ -3,7 +3,6 @@ package schemaparser
 import (
 	"github.com/jensneuse/graphql-go-tools/pkg/ast"
 	"github.com/jensneuse/graphql-go-tools/pkg/astvisitor"
-	"fmt"
 )
 
 type visitor struct {
@@ -29,8 +28,6 @@ func (v *visitor) EnterDocument(operation, definition *ast.Document) {
 		switch r.Kind {
 		case ast.NodeKindEnumTypeDefinition:
 			enumDefinitions := len(operation.EnumTypeDefinitions[r.Ref].EnumValuesDefinition.Refs)
-			var i = operation.EnumTypeDefinitions[r.Ref].EnumValuesDefinition.Refs
-			fmt.Printf("i has value: %v and type: %T\n", i, i)
 			v.totalEnumDefinitions += enumDefinitions
 		case ast.NodeKindObjectTypeDefinition:
 			name := operation.ObjectTypeDefinitionNameString(r.Ref)

@@ -5,16 +5,22 @@ type Query {
 
 interface Character {
   name: String!
+	class: String!
+	colour: String!
 }
 
 type Human implements Character {
   name: String!
   hasLightsaber: Boolean!
+	class: String!
+	colour: String!
 }
 
 type Droid implements Character {
   name: String!
   primaryFunction: String!
+	class: String!
+	colour: String!
 }
 
 enum Episode {

@@ -8,7 +8,7 @@ function Button(props) {
 	}
 
 	return (
-		<button title={props.title} className={`btn ${props.class}`} onClick={()=>{handleClick(props.colour)}} />
+		<button key={props.idx} title={props.title} className={`btn ${props.style}`} onClick={()=>{handleClick(props.colour)}} />
 	)
 }
 
