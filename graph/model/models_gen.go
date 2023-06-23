@@ -9,6 +9,8 @@ type Character interface {
 type Droid struct {
 	Name            string `json:"name"`
 	PrimaryFunction string `json:"primaryFunction"`
+	Class						string `json:"class"`
+	Colour					string `json:"colour"`
 }
 
 func (Droid) IsCharacter() {}
@@ -16,6 +18,8 @@ func (Droid) IsCharacter() {}
 type Human struct {
 	Name          string `json:"name"`
 	HasLightsaber bool   `json:"hasLightsaber"`
+	Class					string `json:"class"`
+	Colour				string `json:"colour"`
 }
 
 func (Human) IsCharacter() {}

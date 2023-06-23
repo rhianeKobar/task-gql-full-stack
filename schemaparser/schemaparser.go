@@ -31,5 +31,5 @@ func CountEnumValues(schema []byte) (int, error) {
 		return 0, report
 	}
 
-	return -1, nil
+	return visitor.totalEnumDefinitions, nil
 }

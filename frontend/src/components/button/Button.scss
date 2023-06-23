@@ -1,0 +1,44 @@
+@import "../../global.scss";
+
+.btn {
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0;
+  height: 150px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+}
+
+.luke {
+  background-image: url("https://coffeewithkenobi.com/wp-content/uploads/2015/02/Luke-EP4.jpg");
+  @include character-shadow(#a1b7b0);
+  &:hover {
+    @include character-hover;
+  }
+}
+
+.han {
+  background-image: url("http://static2.businessinsider.com/image/535faca669bedd717b74114c-1190-625/han-solo-reportedly-has-gigantic-role-in-star-wars-episode-vii.jpg");
+  @include character-shadow(#0B3957);
+  &:hover {
+    @include character-hover;
+  }
+}
+.c-3po {
+  background-image: url("https://data1.ibtimes.co.in/en/full/724624/star-wars-c3po.jpg");
+  @include character-shadow(#D6BE98);
+  &:hover {
+    @include character-hover;
+  }
+}
+.chewy {
+  background-image: url("https://i.kinja-img.com/gawker-media/image/upload/s--gUpk5eyJ--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/sft92ot11zegmj1eeckp.jpg");
+  @include character-shadow(#B2B2B7);
+  &:hover {
+    @include character-hover;
+  }
+}

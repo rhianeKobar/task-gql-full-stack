@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 5em;
+}
+.container .btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.btn {
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0;
+  height: 150px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+}
+
+.luke {
+  background-image: url("https://coffeewithkenobi.com/wp-content/uploads/2015/02/Luke-EP4.jpg");
+  box-shadow: 5px 5px #a1b7b0;
+  transition: box-shadow 200ms, transform 500ms;
+}
+.luke:hover {
+  box-shadow: none;
+  transform: translate(5px, 5px);
+}
+
+.han {
+  background-image: url("http://static2.businessinsider.com/image/535faca669bedd717b74114c-1190-625/han-solo-reportedly-has-gigantic-role-in-star-wars-episode-vii.jpg");
+  box-shadow: 5px 5px #0B3957;
+  transition: box-shadow 200ms, transform 500ms;
+}
+.han:hover {
+  box-shadow: none;
+  transform: translate(5px, 5px);
+}
+
+.c-3po {
+  background-image: url("https://data1.ibtimes.co.in/en/full/724624/star-wars-c3po.jpg");
+  box-shadow: 5px 5px #D6BE98;
+  transition: box-shadow 200ms, transform 500ms;
+}
+.c-3po:hover {
+  box-shadow: none;
+  transform: translate(5px, 5px);
+}
+
+.chewy {
+  background-image: url("https://i.kinja-img.com/gawker-media/image/upload/s--gUpk5eyJ--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/sft92ot11zegmj1eeckp.jpg");
+  box-shadow: 5px 5px #B2B2B7;
+  transition: box-shadow 200ms, transform 500ms;
+}
+.chewy:hover {
+  box-shadow: none;
+  transform: translate(5px, 5px);
+}/*# sourceMappingURL=Button.css.map */
